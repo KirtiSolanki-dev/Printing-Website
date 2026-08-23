@@ -1,0 +1,617 @@
+/* ===================================
+   GOOGLE FONT
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/* ===================================
+   RESET & GLOBAL STYLES
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+}
+
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    padding: 0 3rem;
+    background: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+    animation: fadeUp 1s ease-out;
+}
+
+
+/* ===================================
+   LOGO
+=================================== */
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #22c55e;
+}
+
+
+/* ===================================
+   NAVIGATION LINKS
+=================================== */
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    text-decoration: none;
+    color: #222222;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+
+/* ===================================
+   NAV LINK UNDERLINE ANIMATION
+=================================== */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: #22c55e;
+
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #22c55e;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ===================================
+   ACTIVE NAVIGATION LINK
+=================================== */
+
+.nav-links a.active {
+    color: #22c55e;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* ===================================
+   QUOTE BUTTON
+=================================== */
+
+.quote-btn {
+    padding: 0.9rem 1.8rem;
+
+    text-decoration: none;
+    color: #ffffff;
+    background: #111827;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    border-radius: 50px;
+
+    transition: all 0.3s ease;
+}
+
+.quote-btn:hover {
+    background: #22c55e;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(34, 197, 94, 0.25);
+}
+
+
+/* ===================================
+   HAMBURGER MENU
+=================================== */
+
+.hamburger {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+
+    background: #111827;
+
+    border-radius: 5px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* ===================================
+   HERO SECTION
+=================================== */
+
+.hero {
+    min-height: 70vh;
+
+    padding: 4rem 5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: relative;
+
+    overflow: hidden;
+
+    animation: fadeUp 1s ease-out;
+}
+
+
+/* ===================================
+   HERO BACKGROUND VIDEO
+=================================== */
+
+.hero-video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ===================================
+   HERO OVERLAY
+=================================== */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.90) 35%,
+        rgba(0, 0, 0, 0.75) 50%,
+        rgba(0, 0, 0, 0.30) 75%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+
+/* ===================================
+   HERO CONTENT
+=================================== */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 750px;
+
+    padding: 1.5rem 2rem;
+
+    color: #ffffff;
+
+    border-left: 5px solid #22c55e;
+
+    animation: fadeUp 1s ease-out;
+}
+
+
+/* ===================================
+   HERO CONTENT SOFT GLOW
+   -----------------------------------
+   Creates a subtle green glow that
+   starts from the left side and fades
+   smoothly toward the right.
+=================================== */
+
+.hero-content::before {
+    content: "";
+
+    position: absolute;
+
+    /* Start slightly outside the green line */
+    left: -40px;
+    top: 0;
+
+    /* Width controls how far the glow spreads */
+    width: 450px;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(34, 197, 94, 0.20),
+        rgba(34, 197, 94, 0.08),
+        transparent
+    );
+
+    /* Makes the glow soft instead of sharp */
+    filter: blur(25px);
+
+    pointer-events: none;
+
+    /* Keeps the glow behind the content */
+    z-index: -1;
+}
+
+
+/* ===================================
+   HERO HEADING
+=================================== */
+
+.hero-content h1 {
+    margin-bottom: 0.8rem;
+
+    font-size: clamp(2rem, 3vw, 3rem);
+
+    line-height: 1.1;
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+.hero-content h1 span {
+    color: #22c55e;
+}
+
+
+/* ===================================
+   HERO DESCRIPTION
+=================================== */
+
+.hero-content p {
+    max-width: 550px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+/* ===================================
+   HERO CONTENT ANIMATION
+=================================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===================================
+   HERO BUTTON CONTAINER
+=================================== */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    position: relative;
+    z-index: 3;
+
+    animation: fadeUp 1s ease-out;
+}
+
+
+/* ===================================
+   PRIMARY CTA BUTTON
+=================================== */
+
+.btn-primary {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: #22c55e;
+    color: #ffffff;
+
+    border: 2px solid #22c55e;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #1ca34d;
+    border-color: #1ca34d;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(34, 197, 94, 0.25);
+}
+
+
+/* ===================================
+   SECONDARY CTA BUTTON
+=================================== */
+
+.btn-secondary {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: transparent;
+    color: #ffffff;
+
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    color: #222222;
+
+    border-color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* ===================================
+   TABLET RESPONSIVE
+=================================== */
+
+@media (max-width: 900px) {
+
+    /* ---------- Navbar ---------- */
+
+    .navbar {
+        height: 80px;
+        padding: 0 2rem;
+    }
+
+    .logo {
+        font-size: 1.7rem;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .quote-btn {
+        padding: 0.75rem 1.3rem;
+        font-size: 0.9rem;
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+        padding: 3rem;
+    }
+
+    .hero-content {
+        padding: 2.5rem;
+    }
+
+
+    /* ---------- Hero Glow ---------- */
+
+    .hero-content::before {
+        width: 400px;
+    }
+}
+
+
+/* ===================================
+   MOBILE RESPONSIVE
+=================================== */
+
+@media (max-width: 600px) {
+
+    /* ---------- Navbar ---------- */
+
+    .navbar {
+        height: 70px;
+        padding: 0 1.2rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+
+    /* ---------- Hide Desktop Navigation ---------- */
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        background: #ffffff;
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 1.5rem;
+
+        padding: 2rem 0;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* ---------- Show Navigation When Active ---------- */
+
+    .nav-links.active {
+        display: flex;
+    }
+
+
+    /* ---------- Hide Quote Button ---------- */
+
+    .quote-btn {
+        display: none;
+    }
+
+
+    /* ---------- Show Hamburger ---------- */
+
+    .hamburger {
+        display: flex;
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+        min-height: calc(100vh - 70px);
+
+        padding: 2rem 1.2rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+
+        border-left-width: 4px;
+    }
+
+
+    /* ---------- Hero Glow ---------- */
+
+    .hero-content::before {
+        left: -25px;
+        width: 300px;
+
+        filter: blur(20px);
+    }
+
+
+    /* ---------- Hero Heading ---------- */
+
+    .hero-content h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+
+    /* ---------- Hero Description ---------- */
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+
+    /* ---------- Hero Buttons ---------- */
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
