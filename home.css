@@ -87,6 +87,7 @@ body {
     display: flex;
     gap: 2rem;
     list-style: none;
+    background: #000000;
 }
 
 .nav-links a {
@@ -184,6 +185,7 @@ body {
 
     border: none;
     background: transparent;
+    
 
     cursor: pointer;
 
@@ -197,7 +199,8 @@ body {
 .hamburger span {
     width: 25px;
     height: 2px;
-
+    
+    
     background: #111827;
 
     border-radius: 5px;
@@ -841,6 +844,10 @@ body {
 
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     }
+
+    .nav-links a {
+    color: #111827;
+}
 
 
     /* ---------- Show Navigation When Active ---------- */
