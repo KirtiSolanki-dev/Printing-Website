@@ -5,35 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Indupr</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="services.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
+
+    <!-- ===================================
+         HEADER
+    =================================== -->
+
     <header class="site-header">
+
         <nav class="navbar">
 
-            <!-- LOGO -->
             <div class="logo">
                 Indupr
             </div>
 
-            <!-- NAVIGATION LINKS -->
             <ul class="nav-links" id="nav-links">
+
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" >About</a></li>
+
+                <li><a href="about.html">About</a></li>
+
                 <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+
+                <li><a href="portfolio.html">Portfolio</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+
             </ul>
 
-            <!-- QUOTE BUTTON -->
-            <a href="#" class="quote-btn">
+            <a href="contact.html" class="quote-btn">
                 Get a Quote
             </a>
 
-            <!-- HAMBURGER -->
             <button class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -41,200 +58,356 @@
             </button>
 
         </nav>
+
     </header>
 
     <!-- ===================================
-     SERVICES HERO SECTION
-=================================== -->
+         SERVICES HERO
+    =================================== -->
 
-<section class="services-hero">
+    <section class="services-hero">
 
-    <div class="hero-container">
+        <div class="hero-overlay"></div>
 
-        <!-- LEFT CONTENT -->
-        <div class="hero-content">
+        <div class="hero-container">
 
-            <span class="hero-tag">
-                OUR SERVICES
-            </span>
+            <div class="hero-text">
 
-            <h1>
-                Professional Printing
-                Services For
-                <span>Every Business Need</span>
-            </h1>
+                <span class="section-tag">
+                    OUR SERVICES
+                </span>
 
-            <p>
-                From business cards and brochures to custom packaging
-                and large-format printing, we deliver exceptional
-                quality with precision and speed.
+                <h1>
+                    Professional Printing
+                    <br>
+                    Solutions For
+                    <span>Every Business.</span>
+                </h1>
+
+                <p>
+                    We provide high-quality printing solutions
+                    designed to help businesses create a strong
+                    and memorable brand presence.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+         SERVICES GRID
+    =================================== -->
+
+    <section class="services-list">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-tag">
+                    WHAT WE OFFER
+                </span>
+
+                <h2>
+                    Complete Printing Solutions
+                </h2>
+
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-id-card"></i>
+                    <h3>Business Cards</h3>
+                    <p>Premium quality cards that leave a lasting impression.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <h3>Brochures & Flyers</h3>
+                    <p>Professional marketing materials for your campaigns.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-box-open"></i>
+                    <h3>Packaging Solutions</h3>
+                    <p>Custom packaging that strengthens your brand identity.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-image"></i>
+                    <h3>Posters & Banners</h3>
+                    <p>Large-format prints for events and promotions.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-book"></i>
+                    <h3>Books & Catalogues</h3>
+                    <p>High-quality printing for books and publications.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-palette"></i>
+                    <h3>Branding Materials</h3>
+                    <p>Everything your brand needs to stand out.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+         PRINTING SOLUTIONS
+    =================================== -->
+
+    <section class="printing-solutions reveal">
+
+        <div class="container solutions-grid">
+
+            <div class="solutions-image reveal">
+
+                <img src="assets/Screenshot 2026-08-30 010623.png" alt="Printing Services">
+
+            </div>
+
+            <div class="solutions-content ">
+                
+                <span class="section-tag reveal">
+                    QUALITY PRINTING
+                </span>
+
+                <h2>
+                    Advanced Printing
+                    <span>Technology</span>
+                </h2>
+
+                <p>
+                    We use modern printing equipment and
+                    premium materials to deliver exceptional
+                    quality on every project.
+                </p>
+
+                <p>
+                    Whether you need marketing materials,
+                    packaging, or commercial printing,
+                    our team ensures consistent results.
+                </p>
+
+                <ul class="solutions-features reveal">
+                    <li><i class="fa-solid fa-check"></i> Premium Printing Materials</li>
+                    <li><i class="fa-solid fa-check"></i> Advanced Printing Technology</li>
+                    <li><i class="fa-solid fa-check"></i> Accurate Color Matching</li>
+                    <li><i class="fa-solid fa-check"></i> Fast Production Turnaround</li>
+                </ul>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+         BENEFITS
+    =================================== -->
+
+    <section class="service-benefits reveal">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-tag">
+                    WHY CHOOSE US
+                </span>
+
+                <h2>
+                    Why Businesses Trust Indupr
+                </h2>
+
+            </div>
+
+            <div class="benefits-grid">
+
+                <div class="benefit-card reveal">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>Premium Quality</h3>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h3>Fast Delivery</h3>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <h3>Affordable Pricing</h3>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <i class="fa-solid fa-headset"></i>
+                    <h3>Dedicated Support</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+         PROCESS
+    =================================== -->
+
+    <section class="process-section reveal">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-tag reveal">
+                    OUR PROCESS
+                </span>
+
+                <h2>
+                    How We Work
+                </h2>
+
+            </div>
+
+            <div class="process-grid">
+
+                <div class="process-card reveal">
+                    <span>01</span>
+                    <h3>Consultation</h3>
+                </div>
+
+                <div class="process-card reveal">
+                    <span>02</span>
+                    <h3>Design Review</h3>
+                </div>
+
+                <div class="process-card reveal">
+                    <span>03</span>
+                    <h3>Printing</h3>
+                </div>
+
+                <div class="process-card reveal">
+                    <span>04</span>
+                    <h3>Delivery</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+         STATS
+    =================================== -->
+
+    <section class="service-stats reveal">
+
+        <div class="container stats-grid">
+
+            <div class="stat-card reveal">
+                <h2>5000+</h2>
+                <p>Projects Completed</p>
+            </div>
+
+            <div class="stat-card reveal">
+                <h2>98%</h2>
+                <p>Client Satisfaction</p>
+            </div>
+
+            <div class="stat-card reveal">
+                <h2>10+</h2>
+                <p>Years Experience</p>
+            </div>
+
+            <div class="stat-card reveal">
+                <h2>24/7</h2>
+                <p>Support</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+         CTA
+    =================================== -->
+
+    <section class="cta-section reveal">
+
+        <div class="container cta-grid">
+
+           
+
+            <div class="cta-content reveal">
+
+                <span class="section-tag reveal">
+                    READY TO GET STARTED?
+                </span>
+
+                <h2>
+                    Need Premium
+                    <span>Printing Solutions?</span>
+                </h2>
+
+                <p>
+                    Let's discuss your next printing project
+                    and create something exceptional together.
+                </p>
+
+                <a href="contact.html" class="cta-btn">
+                    Get A Free Quote
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================
+         FOOTER
+    =================================== -->
+
+    <footer class="footer reveal">
+
+        <div class="container footer-content reveal">
+
+            <div class="footer-logo reveal">
+
+                <a href="#" class="logo">
+                    Indupr
+                </a>
+
+                <p>
+                    Quality printing solutions for modern businesses.
+                </p>
+
+            </div>
+
+            <p class="copyright reveal">
+                © 2026 Indupr. All Rights Reserved.
             </p>
 
-            <div class="hero-buttons">
-
-                <a href="contact.html" class="btn-primary">
-                    Get a Quote
-                </a>
-
-                <a href="portfolio.html" class="btn-secondary">
-                    View Portfolio
-                </a>
-
-            </div>
-
         </div>
 
-        <!-- RIGHT IMAGE -->
-        <div class="hero-image">
+    </footer>
 
-            <img
-                src="assets/hero-poster.webp.png"
-                alt="Professional Printing Machine"
-            >
+    <script src="main.js"></script>
+    <script src="services.js"></script>
 
-        </div>
 
-    </div>
-
-</section>
-
-<!-- ===================================
-     OUR PRINTING SERVICES
-=================================== -->
-
-<section class="services-section">
-
-    <div class="container">
-
-        <!-- SECTION HEADING -->
-
-        <span class="section-tag">
-            WHAT WE OFFER
-        </span>
-
-        <h2 class="section-title">
-            Our <span>Printing Services</span>
-        </h2>
-
-        <p class="section-description">
-            We provide a complete range of professional printing solutions
-            designed to help businesses promote their brand, engage customers,
-            and stand out in a competitive market.
-        </p>
-
-        <!-- SERVICES GRID -->
-
-        <div class="services-grid">
-
-            <!-- CARD 1 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    <i class="ri-id-card-line"></i>
-                </div>
-
-                <h3>Business Cards</h3>
-
-                <p>
-                    Premium quality business cards with sharp colors,
-                    professional finishes, and durable materials.
-                </p>
-
-            </div>
-
-            <!-- CARD 2 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    <i class="ri-file-copy-line"></i>
-                </div>
-
-                <h3>Brochures & Flyers</h3>
-
-                <p>
-                    Eye-catching marketing materials designed to
-                    showcase your products and services effectively.
-                </p>
-
-            </div>
-
-            <!-- CARD 3 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    <i class="ri-box-3-line"></i>
-                </div>
-
-                <h3>Packaging Solutions</h3>
-
-                <p>
-                    Custom packaging solutions that strengthen your
-                    brand identity and customer experience.
-                </p>
-
-            </div>
-
-            <!-- CARD 4 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    <i class="ri-book-open-line"></i>
-                </div>
-
-                <h3>Books & Publishing</h3>
-
-                <p>
-                    High-quality printing for books, magazines,
-                    catalogs, manuals, and educational materials.
-                </p>
-
-            </div>
-
-            <!-- CARD 5 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    <i class="ri-printer-line"></i>
-                </div>
-
-                <h3>Large Format Printing</h3>
-
-                <p>
-                    Posters, banners, exhibition graphics, and signage
-                    designed for maximum visibility and impact.
-                </p>
-
-            </div>
-
-            <!-- CARD 6 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    <i class="ri-brush-line"></i>
-                </div>
-
-                <h3>Custom Branding</h3>
-
-                <p>
-                    Complete branding and print solutions tailored
-                    to your business goals and identity.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
- <script src="main.js"></script>
 </body>
 
 </html>
