@@ -96,6 +96,7 @@ button {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 
     animation: fadeUp 1s ease-out;
+    position: relative;
 }
 
 
@@ -238,7 +239,7 @@ button {
     height: 2px;
     
     
-    background: #111827;
+    background: white;
 
     border-radius: 5px;
 

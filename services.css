@@ -1,0 +1,785 @@
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #111111;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+
+/* =========================================================
+   COMMON COLORS
+========================================================= */
+
+:root {
+    --green: #12b957;
+    --dark-green: #079a45;
+    --black: #080d0b;
+    --dark: #101412;
+    --white: #ffffff;
+    --light-bg: #f5faf7;
+    --text: #222522;
+    --muted: #707773;
+    --border: #e5ebe7;
+}
+
+/* =========================================================
+   STICKY HEADER
+========================================================= */
+
+.site-header {
+    width: 100%;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 9999;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    padding: 0 3rem;
+    background: #000000;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+    animation: fadeUp 1s ease-out;
+    position: relative;
+}
+
+
+/* ===================================
+   LOGO
+=================================== */
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #22c55e;
+}
+
+
+/* ===================================
+   NAVIGATION LINKS
+=================================== */
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    text-decoration: none;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+
+/* ===================================
+   NAV LINK UNDERLINE ANIMATION
+=================================== */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: #22c55e;
+
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #22c55e;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ===================================
+   ACTIVE NAVIGATION LINK
+=================================== */
+
+.nav-links a.active {
+    color: #22c55e;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* ===================================
+   QUOTE BUTTON
+=================================== */
+
+.quote-btn {
+    padding: 0.9rem 1.8rem;
+
+    text-decoration: none;
+    color: #ffffff;
+    background: #22c55e;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    border-radius: 50px;
+
+    transition: all 0.3s ease;
+}
+
+.quote-btn:hover {
+    background: #22c55e;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(34, 197, 94, 0.25);
+}
+
+
+/* ===================================
+   HAMBURGER MENU
+=================================== */
+
+.hamburger {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: transparent;
+
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+
+
+    background: white;
+
+    border-radius: 5px;
+
+    transition: all 0.3s ease;
+}
+
+/* ===================================
+   TABLET RESPONSIVE
+=================================== */
+
+@media (max-width: 992px) {
+
+    .navbar {
+        padding: 0 2rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+
+    .quote-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===================================
+   SMALL TABLET
+=================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .quote-btn {
+        padding: 0.75rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===================================
+   MOBILE NAVIGATION
+=================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 1.2rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-links a {
+        color: #111827;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .quote-btn {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+
+/* =========================================================
+   SERVICES HERO SECTION
+========================================================= */
+
+.services-hero {
+    width: 100%;
+    height: 80vh;
+    max-height: 650px;
+    min-height: 500px;
+    background: #ffffff;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    animation: fadeUp 1s ease-out;
+}
+
+.hero-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    flex: 1;
+    max-width: 450px;
+    padding-left: 4%;
+    padding-right: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag {
+    display: inline-block;
+    color: var(--green);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1rem;
+
+    font-size: 2.8rem;
+    line-height: 1.15;
+}
+
+.hero-content h1 span {
+    color: var(--green);
+}
+
+.hero-content p {
+    max-width: 520px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    padding: 14px 30px;
+    background: var(--green);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--dark-green);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    padding: 14px 30px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    background: transparent;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #f5f5f5;
+}
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-image {
+    flex: 1.15;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image img,
+.hero-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================================
+   WHITE FADE EFFECT
+========================================================= */
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background: linear-gradient(to right,
+            #ffffff 0%,
+            rgba(255, 255, 255, 0.95) 20%,
+            rgba(255, 255, 255, 0.75) 45%,
+            rgba(255, 255, 255, 0) 100%);
+    z-index: 2;
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .hero-content {
+        padding-left: 3%;
+    }
+
+    .hero-content h1 {
+        font-size: 3.8rem;
+    }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .services-hero {
+        height: auto;
+        min-height: auto;
+    }
+
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 4rem 5%;
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin-inline: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 450px;
+    }
+
+    .hero-image::before {
+        display: none;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero-content {
+        padding: 3rem 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-image {
+        height: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-image {
+        height: 260px;
+    }
+}
+
+
+
+
+
+
+/* =========================================================
+   OUR PRINTING SERVICES
+========================================================= */
+
+.services-section {
+    padding: 90px 0;
+    background: #ebefed;
+}
+
+.services-section .container {
+    text-align: center;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-tag {
+    display: inline-block;
+    color: var(--green);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.section-title span {
+    color: var(--green);
+}
+
+.section-description {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* =========================================================
+   SERVICES GRID
+========================================================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.service-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 35px 30px;
+    text-align: left;
+    transition: all 0.35s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    /* border-color: var(--green); */
+    box-shadow: 0 20px 40px rgba(18, 185, 87, 0.4);
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(18, 185, 87, 0.1);
+    color: var(--green);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: 0.3s ease;
+}
+
+.service-icon i {
+    font-size: 1.8rem;
+}
+
+.service-card:hover .service-icon {
+    background: var(--green);
+    color: #ffffff;
+}
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.service-card h3 {
+    font-size: 1.3rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .services-section {
+        padding: 80px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-description {
+        margin-bottom: 3rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        text-align: center;
+    }
+
+    .service-icon {
+        margin-inline: auto;
+    }
+}
+
+
+/* =========================================================
+   MAIN ANIMATION
+   SAME STYLE AS HOME PAGE
+========================================================= */
+
+
+/* ---------- FADE UP ---------- */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}

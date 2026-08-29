@@ -5,10 +5,11 @@
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-
+if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+}
 
 // ===================================
 // ACTIVE NAVIGATION LINK
@@ -17,35 +18,16 @@ hamburger.addEventListener("click", () => {
 const navItems = document.querySelectorAll(".nav-links a");
 
 navItems.forEach((item) => {
-
     item.addEventListener("click", () => {
 
-        // Remove active class from all links
         navItems.forEach((link) => {
             link.classList.remove("active");
         });
 
-        // Add active class to clicked link
         item.classList.add("active");
 
-        // Close mobile menu after clicking a link
-        navLinks.classList.remove("active");
-    });
-
-});
-
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+        if (navLinks) {
+            navLinks.classList.remove("active");
         }
     });
-}, {
-    threshold: 0.2
 });
-
-document.querySelectorAll('.about-image, .about-content')
-    .forEach((el) => observer.observe(el));
-
-    
