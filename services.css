@@ -158,16 +158,29 @@ button {
 =================================== */
 
 .logo {
-    font-size: 2rem;
-    font-weight: 700;
-    color: white;
-    cursor: pointer;
-
-    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
-.logo:hover {
-    color: #22c55e;
+.logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .logo img {
+        height: 80px;
+    }
+
 }
 
 
