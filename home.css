@@ -1743,117 +1743,82 @@ body {
 =================================== */
 
 .loader-content {
-    width: 380px;
+    width: 350px;
     text-align: center;
 }
 
 /* ===================================
-   PRINTER
+   PRINTER TRACK
 =================================== */
 
-.printer {
+.loader-track {
     position: relative;
-    width: 140px;
-    height: 120px;
-    margin: 0 auto 25px;
+    height: 60px;
+    margin-bottom: 15px;
 }
 
-.printer-body {
+.printer-icon {
     position: absolute;
-    bottom: 0;
-    width: 140px;
-    height: 80px;
-    background: #111827;
-    border: 2px solid #22c55e;
-    border-radius: 12px;
-}
-
-.printer-slot {
-    position: absolute;
-    top: 12px;
-    left: 20px;
-    width: 100px;
-    height: 6px;
-    background: #22c55e;
-    border-radius: 20px;
-}
-
-.printer-paper {
-    position: absolute;
-    left: 25px;
-    top: -5px;
-    width: 90px;
-    height: 70px;
-    background: #ffffff;
-    border-radius: 4px;
-    animation: printing 1.8s ease-in-out infinite;
-}
-
-.printer-paper::before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    width: 60px;
-    height: 3px;
-    background: #22c55e;
-    box-shadow:
-        0 12px 0 #22c55e,
-        0 24px 0 #22c55e;
-}
-
-@keyframes printing {
-
-    0% {
-        transform: translateY(-20px);
-    }
-
-    50% {
-        transform: translateY(10px);
-    }
-
-    100% {
-        transform: translateY(-20px);
-    }
-
+    font-size: 2rem;
+    animation: movePrinter 2.5s linear infinite;
 }
 
 /* ===================================
-   TEXT
+   PROGRESS LINE
 =================================== */
 
-#loading-text {
-    color: #ffffff;
-    font-size: 1rem;
+.progress-line {
+    width: 100%;
+    height: 5px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50px;
+    overflow: hidden;
     margin-bottom: 20px;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background: #22c55e;
+    border-radius: 50px;
+    animation: fillProgress 2.5s linear forwards;
+}
+
+/* ===================================
+   TITLE
+=================================== */
+
+.loader-title {
+    color: #ffffff;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#loading-text {
+    color: #b7c3d0;
+    font-size: 0.95rem;
     min-height: 20px;
 }
 
 /* ===================================
-   PROGRESS BAR
+   ANIMATIONS
 =================================== */
 
-.progress-bar {
-    width: 100%;
-    height: 8px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 50px;
-    overflow: hidden;
+@keyframes movePrinter {
+
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: calc(100% - 32px);
+    }
+
 }
 
-.progress {
-    width: 0;
-    height: 100%;
-    border-radius: 50px;
-    background: linear-gradient(
-        90deg,
-        #22c55e,
-        #4ade80
-    );
-    animation: progressFill 2.5s ease forwards;
-}
-
-@keyframes progressFill {
+@keyframes fillProgress {
 
     from {
         width: 0%;
@@ -1875,12 +1840,12 @@ body {
         width: 85%;
     }
 
-    .printer {
-        transform: scale(0.85);
+    .printer-icon {
+        font-size: 1.8rem;
     }
 
-    #loading-text {
-        font-size: 0.9rem;
+    .loader-title {
+        font-size: 1.1rem;
     }
 
 }
