@@ -1791,7 +1791,7 @@ body {
 @media (max-width: 480px) {
 
     .loader-content {
-        width: 85%;
+        width: 80%;
     }
 
     .loader-content h1 {
