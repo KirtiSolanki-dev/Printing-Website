@@ -57,10 +57,21 @@ window.addEventListener("scroll", () => {
 /* ===================================
    INDUPR PRELOADER
 =================================== */
-
 window.addEventListener("load", () => {
 
     const preloader = document.getElementById("preloader");
+
+    // If loader already shown in this browser session
+    if (sessionStorage.getItem("preloaderShown")) {
+
+        preloader.style.display = "none";
+        return;
+
+    }
+
+    // Mark loader as shown
+    sessionStorage.setItem("preloaderShown", "true");
+
     const loadingText = document.getElementById("loading-text");
 
     const messages = [
@@ -95,28 +106,4 @@ window.addEventListener("load", () => {
 
     }, 2500);
 
-});
-
-const docWidth = document.documentElement.clientWidth;
-
-document.querySelectorAll("*").forEach(el => {
-  if (el.scrollWidth > docWidth) {
-    console.log(el, el.scrollWidth);
-  }
-});
-
-const about = document.querySelector(".about");
-
-about.querySelectorAll("*").forEach(el => {
-    if (el.scrollWidth > about.clientWidth) {
-        console.log(el, el.scrollWidth);
-    }
-});
-
-document.querySelectorAll(".about *").forEach(el => {
-    const rect = el.getBoundingClientRect();
-
-    if (rect.right > window.innerWidth) {
-        console.log("OVERFLOW:", el);
-    }
 });
