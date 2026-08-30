@@ -24,7 +24,7 @@ body {
     background: #ffffff;
     color: #111111;
     overflow-x: hidden;
-     animation: pageLoad 0.8s ease;
+    animation: pageLoad 0.8s ease;
 }
 
 img {

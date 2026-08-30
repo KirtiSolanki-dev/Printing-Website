@@ -21,8 +21,12 @@ html {
 }
 
 body {
-    width: 100%;
-     animation: pageLoad 0.8s ease;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #111111;
+    overflow-x: hidden;
+    animation: pageLoad 0.8s ease;
+
 }
 
 @keyframes pageLoad {
