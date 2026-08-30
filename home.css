@@ -22,6 +22,16 @@ html {
 
 body {
     width: 100%;
+     animation: pageLoad 0.8s ease;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* =========================================================
@@ -215,7 +225,7 @@ body {
 =================================== */
 
 .hero {
-    min-height: 70vh;
+    min-height: 78vh;
 
     padding: 4rem 5rem;
 
@@ -933,7 +943,7 @@ body {
     transform: translateY(-10px);
 
     box-shadow:
-        0 20px 40px rgba(0,0,0,0.08);
+        0 20px 40px rgba(0,0,0,0.19);
 }
 
 /* ===================================
@@ -1179,7 +1189,7 @@ body {
 
 .portfolio-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    box-shadow:0 15px 35px rgba(0,0,0,0.19);
 }
 
 /* ===================================
@@ -1368,7 +1378,7 @@ body {
 
 .contact-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    box-shadow:0 15px 35px rgba(0,0,0,0.19);
 }
 
 /* ===================================
@@ -1686,4 +1696,107 @@ body {
     .footer-logo{
         font-size:1.8rem;
     }
+}
+
+/* ===================================
+   INDUPR PRINTING PRELOADER
+=================================== */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #080d0b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    overflow: hidden;
+    transition: opacity 0.7s ease,
+                visibility 0.7s ease;
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    width: 340px;
+    text-align: center;
+}
+
+.loader-content h1 {
+    color: #12b957;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 6px;
+    margin-bottom: 15px;
+    animation: logoGlow 2s ease-in-out infinite;
+}
+
+.loader-content p {
+    color: #b6beb8;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+    min-height: 22px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    border-radius: 50px;
+    background: linear-gradient(
+        90deg,
+        #12b957,
+        #41f48b
+    );
+    animation: printProgress 2.5s ease forwards;
+}
+
+@keyframes printProgress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes logoGlow {
+    0% {
+        text-shadow: 0 0 0 rgba(18,185,87,0);
+    }
+
+    50% {
+        text-shadow:
+            0 0 10px rgba(18,185,87,0.4),
+            0 0 20px rgba(18,185,87,0.2);
+    }
+
+    100% {
+        text-shadow: 0 0 0 rgba(18,185,87,0);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .loader-content {
+        width: 85%;
+    }
+
+    .loader-content h1 {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+
 }

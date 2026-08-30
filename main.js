@@ -1,3 +1,5 @@
+console.log("JS Loaded");
+
 // ===================================
 // HAMBURGER MENU
 // ===================================
@@ -30,4 +32,67 @@ navItems.forEach((item) => {
             navLinks.classList.remove("active");
         }
     });
+});
+
+const reveals = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+);
+
+window.addEventListener("scroll", () => {
+
+    reveals.forEach((element) => {
+
+        const windowHeight = window.innerHeight;
+        const revealTop = element.getBoundingClientRect().top;
+
+        if (revealTop < windowHeight - 100) {
+            element.classList.add("show");
+        }
+
+    });
+
+});
+
+
+/* ===================================
+   INDUPR PRELOADER
+=================================== */
+
+window.addEventListener("load", () => {
+
+    const preloader = document.getElementById("preloader");
+    const loadingText = document.getElementById("loading-text");
+
+    const messages = [
+        "Preparing Your Print Job...",
+        "Applying CMYK Colors...",
+        "Calibrating Print Quality...",
+        "Finalizing Design Layout...",
+        "Ready To Print..."
+    ];
+
+    let index = 0;
+
+    const textInterval = setInterval(() => {
+
+        index++;
+
+        if (index < messages.length) {
+            loadingText.textContent = messages[index];
+        }
+
+    }, 500);
+
+    setTimeout(() => {
+
+        clearInterval(textInterval);
+
+        preloader.classList.add("hide");
+
+        setTimeout(() => {
+            preloader.remove();
+        }, 700);
+
+    }, 2500);
+
 });
