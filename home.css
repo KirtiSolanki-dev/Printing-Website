@@ -1884,3 +1884,18 @@ body {
     }
 
 }
+
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img,
+video {
+    max-width: 100%;
+}
