@@ -300,6 +300,7 @@ body {
     border-left: 5px solid #22c55e;
 
     animation: fadeUp 1s ease-out;
+    overflow: hidden;
 }
 
 
