@@ -96,3 +96,27 @@ window.addEventListener("load", () => {
     }, 2500);
 
 });
+
+const docWidth = document.documentElement.clientWidth;
+
+document.querySelectorAll("*").forEach(el => {
+  if (el.scrollWidth > docWidth) {
+    console.log(el, el.scrollWidth);
+  }
+});
+
+const about = document.querySelector(".about");
+
+about.querySelectorAll("*").forEach(el => {
+    if (el.scrollWidth > about.clientWidth) {
+        console.log(el, el.scrollWidth);
+    }
+});
+
+document.querySelectorAll(".about *").forEach(el => {
+    const rect = el.getBoundingClientRect();
+
+    if (rect.right > window.innerWidth) {
+        console.log("OVERFLOW:", el);
+    }
+});
