@@ -53,23 +53,23 @@ window.addEventListener("scroll", () => {
 
 });
 
-
 /* ===================================
    INDUPR PRELOADER
 =================================== */
+
 window.addEventListener("load", () => {
 
     const preloader = document.getElementById("preloader");
 
-    // If loader already shown in this browser session
+    if (!preloader) return;
+
     if (sessionStorage.getItem("preloaderShown")) {
 
-        preloader.style.display = "none";
+        preloader.remove();
         return;
 
     }
 
-    // Mark loader as shown
     sessionStorage.setItem("preloaderShown", "true");
 
     const loadingText = document.getElementById("loading-text");

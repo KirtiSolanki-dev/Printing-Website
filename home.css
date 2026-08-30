@@ -1716,8 +1716,9 @@ body {
     }
 }
 
+
 /* ===================================
-   INDUPR PRINTING PRELOADER
+   PRELOADER
 =================================== */
 
 #preloader {
@@ -1727,8 +1728,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999;
-    overflow: hidden;
+    z-index: 999999;
     transition: opacity 0.7s ease,
                 visibility 0.7s ease;
 }
@@ -1738,49 +1738,123 @@ body {
     visibility: hidden;
 }
 
+/* ===================================
+   CONTENT
+=================================== */
+
 .loader-content {
-    width: 340px;
+    width: 380px;
     text-align: center;
 }
 
-.loader-content h1 {
-    color: #12b957;
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: 6px;
-    margin-bottom: 15px;
-    animation: logoGlow 2s ease-in-out infinite;
+/* ===================================
+   PRINTER
+=================================== */
+
+.printer {
+    position: relative;
+    width: 140px;
+    height: 120px;
+    margin: 0 auto 25px;
 }
 
-.loader-content p {
-    color: #b6beb8;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    margin-bottom: 22px;
-    min-height: 22px;
+.printer-body {
+    position: absolute;
+    bottom: 0;
+    width: 140px;
+    height: 80px;
+    background: #111827;
+    border: 2px solid #22c55e;
+    border-radius: 12px;
 }
+
+.printer-slot {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    width: 100px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 20px;
+}
+
+.printer-paper {
+    position: absolute;
+    left: 25px;
+    top: -5px;
+    width: 90px;
+    height: 70px;
+    background: #ffffff;
+    border-radius: 4px;
+    animation: printing 1.8s ease-in-out infinite;
+}
+
+.printer-paper::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 60px;
+    height: 3px;
+    background: #22c55e;
+    box-shadow:
+        0 12px 0 #22c55e,
+        0 24px 0 #22c55e;
+}
+
+@keyframes printing {
+
+    0% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+
+}
+
+/* ===================================
+   TEXT
+=================================== */
+
+#loading-text {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+
+/* ===================================
+   PROGRESS BAR
+=================================== */
 
 .progress-bar {
     width: 100%;
     height: 8px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.1);
     border-radius: 50px;
     overflow: hidden;
 }
 
 .progress {
+    width: 0;
     height: 100%;
-    width: 0%;
     border-radius: 50px;
     background: linear-gradient(
         90deg,
-        #12b957,
-        #41f48b
+        #22c55e,
+        #4ade80
     );
-    animation: printProgress 2.5s ease forwards;
+    animation: progressFill 2.5s ease forwards;
 }
 
-@keyframes printProgress {
+@keyframes progressFill {
+
     from {
         width: 0%;
     }
@@ -1788,48 +1862,25 @@ body {
     to {
         width: 100%;
     }
+
 }
 
-@keyframes logoGlow {
-    0% {
-        text-shadow: 0 0 0 rgba(18,185,87,0);
-    }
+/* ===================================
+   MOBILE
+=================================== */
 
-    50% {
-        text-shadow:
-            0 0 10px rgba(18,185,87,0.4),
-            0 0 20px rgba(18,185,87,0.2);
-    }
-
-    100% {
-        text-shadow: 0 0 0 rgba(18,185,87,0);
-    }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .loader-content {
-        width: 80%;
+        width: 85%;
     }
 
-    .loader-content h1 {
-        font-size: 2.5rem;
-        letter-spacing: 4px;
+    .printer {
+        transform: scale(0.85);
     }
 
-}
+    #loading-text {
+        font-size: 0.9rem;
+    }
 
-html,
-body {
-    overflow-x: hidden;
-    max-width: 100%;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-img,
-video {
-    max-width: 100%;
 }
