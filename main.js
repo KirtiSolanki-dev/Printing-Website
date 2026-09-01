@@ -63,6 +63,8 @@ window.addEventListener("load", () => {
 
     if (!preloader) return;
 
+    /* Show only once per browser tab */
+
     if (sessionStorage.getItem("preloaderShown")) {
 
         preloader.remove();
@@ -75,11 +77,13 @@ window.addEventListener("load", () => {
     const loadingText = document.getElementById("loading-text");
 
     const messages = [
+
         "Preparing Your Print Job...",
+        "Loading Premium Designs...",
         "Applying CMYK Colors...",
         "Calibrating Print Quality...",
-        "Finalizing Design Layout...",
         "Ready To Print..."
+
     ];
 
     let index = 0;
@@ -89,7 +93,9 @@ window.addEventListener("load", () => {
         index++;
 
         if (index < messages.length) {
+
             loadingText.textContent = messages[index];
+
         }
 
     }, 500);
@@ -101,9 +107,11 @@ window.addEventListener("load", () => {
         preloader.classList.add("hide");
 
         setTimeout(() => {
+
             preloader.remove();
+
         }, 700);
 
-    }, 2500);
+    }, 5000);
 
 });
