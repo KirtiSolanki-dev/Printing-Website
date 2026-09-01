@@ -2270,11 +2270,12 @@ section {
 =================================== */
 
 .stats-section {
-    padding: 110px 8%;
-    padding-top: 140px;
+    padding: 120px 8%;
 
     position: relative;
     overflow: hidden;
+
+    min-height: 75vh;
 
     background:
         linear-gradient(
@@ -2283,7 +2284,6 @@ section {
             rgba(255,255,255,1),
             rgba(255,0,170,0.04)
         );
-    height: 80vh;
 }
 
 /* ===================================
@@ -2333,7 +2333,7 @@ section {
 .stats-grid {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
 
     gap: 2rem;
 
@@ -2354,8 +2354,7 @@ section {
 
     border-radius: 24px;
 
-    background:
-        rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.75);
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -2368,7 +2367,7 @@ section {
 }
 
 /* ===================================
-   TOP GRADIENT BORDER
+   TOP GRADIENT BAR
 =================================== */
 
 .stat-item::before {
@@ -2390,7 +2389,7 @@ section {
             #ffd500
         );
 
-    opacity: 0.8;
+    opacity: 0.9;
 
     transition: all 0.4s ease;
 }
@@ -2409,7 +2408,7 @@ section {
 .stat-item:hover::before {
     box-shadow:
         0 0 15px rgba(0,207,255,0.5),
-        0 0 25px rgba(255,0,170,0.3);
+        0 0 25px rgba(255,0,170,0.25);
 }
 
 /* ===================================
@@ -2432,9 +2431,29 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    
+    display: inline-block;
+
+    animation: floatIcon 3s ease-in-out infinite;
 }
 
+/* ===================================
+   FLOAT ANIMATION
+=================================== */
+
+@keyframes floatIcon {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
 
 /* ===================================
    NUMBER
@@ -2465,34 +2484,56 @@ section {
     font-size: 0.95rem;
 
     font-weight: 500;
+
+    line-height: 1.6;
 }
 
 /* ===================================
-   RESPONSIVE
+   TABLET
 =================================== */
 
 @media (max-width: 992px) {
 
+    .stats-section {
+        padding: 100px 6%;
+        min-height: auto;
+    }
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .stat-item {
+        padding: 2.2rem 1.8rem;
+    }
 }
+
+/* ===================================
+   MOBILE
+=================================== */
 
 @media (max-width: 768px) {
 
     .stats-section {
-        padding: 80px 6%;
-        height: 150vh;
+        padding: 90px 6%;
     }
 
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .stat-item {
+        padding: 2rem;
+    }
+
+    .stat-item i {
+        font-size: 2.4rem;
     }
 
     .stat-item h2 {
         font-size: 2.4rem;
     }
-
 }
 
 /* ===================================
