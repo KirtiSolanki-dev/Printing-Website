@@ -383,7 +383,7 @@ button {
     text-align:center;
     background:#cfead0;
     padding:100px 0;
-    animation: fadeUp 1s ease-out;
+   animation: fadeUp 1s ease-out;
 }
 
 .hero-content{
