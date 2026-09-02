@@ -474,6 +474,42 @@ button {
 }
 
 /* ===================================
+   MOBILE VERSION
+=================================== */
+
+@media (max-width: 768px){
+
+    .contact-info{
+        padding: 70px 5%;
+    }
+
+    .info-grid{
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .info-card{
+        padding: 2rem 1.5rem;
+    }
+
+    .info-icon{
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .info-card h3{
+        font-size: 1.2rem;
+    }
+
+    .info-card p{
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+}
+
+/* ===================================
    CONTACT FORM
 =================================== */
 
@@ -557,6 +593,100 @@ button {
 .submit-btn:hover{
     background:var(--dark-green);
     transform:translateY(-3px);
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 992px){
+
+    .contact-grid{
+        gap: 50px;
+    }
+
+    .contact-content h2{
+        font-size: 40px;
+    }
+
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 768px){
+
+    .contact-form-section{
+        padding: 80px 5%;
+    }
+
+    .contact-grid{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-content{
+        text-align: center;
+    }
+
+    .contact-content h2{
+        font-size: 2.2rem;
+        margin: 12px 0 18px;
+    }
+
+    .contact-content p{
+        font-size: .95rem;
+        margin-bottom: 25px;
+    }
+
+    .contact-feature{
+        justify-content: center;
+    }
+
+    .contact-form{
+        padding: 30px 20px;
+    }
+
+    .input-group input,
+    .input-group textarea{
+        padding: 14px;
+        font-size: .95rem;
+    }
+
+    .submit-btn{
+        padding: 14px;
+    }
+}
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media (max-width: 480px){
+
+    .contact-form-section{
+        padding: 70px 5%;
+    }
+
+    .contact-content h2{
+        font-size: 1.9rem;
+    }
+
+    .contact-form{
+        padding: 25px 18px;
+        border-radius: 14px;
+    }
+
+    .input-group input,
+    .input-group textarea{
+        padding: 12px;
+    }
+
+    .submit-btn{
+        padding: 12px;
+        font-size: .9rem;
+    }
 }
 
 /* ===================================
@@ -656,158 +786,236 @@ button {
 }
 
 /* ===================================
-   CTA SECTION
+   CONTACT FORM SECTION
 =================================== */
 
-.cta-section{
-    padding: 70px 0;
-    background: linear-gradient(
-        135deg,
-        #0cb553,
-        #078e40
-    );
+.contact-form-section{
+    padding: 110px 8%;
+    background: #f5faf7;
     overflow: hidden;
 }
 
 /* ===================================
-   CTA GRID
+   GRID
 =================================== */
 
-.cta-grid{
+.contact-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 5rem;
     align-items: center;
-    gap: 70px;
 }
 
 /* ===================================
-   CTA CONTENT
+   LEFT CONTENT
 =================================== */
 
-.cta-content .section-tag{
-    color: #bfffd4;
-}
-
-.cta-content h2{
+.contact-content{
     max-width: 550px;
-    color: #ffffff;
-    font-size: 42px;
-    line-height: 1.2;
-    margin-bottom: 18px;
 }
 
-.cta-content p{
-    max-width: 500px;
-    color: #e0ffe9;
-    font-size: 15px;
+.contact-content h2{
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+    margin: 1rem 0 1.5rem;
+    color: var(--black);
+}
+
+.contact-content p{
+    color: var(--muted);
     line-height: 1.8;
-    margin-bottom: 25px;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-feature{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    margin-bottom: 1rem;
+}
+
+.contact-feature i{
+    color: var(--green);
+    font-size: 1rem;
+}
+
+.contact-feature span{
+    font-size: .95rem;
 }
 
 /* ===================================
-   CTA BUTTON
+   FORM CARD
 =================================== */
 
-.cta-btn{
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    background: #ffffff;
-    color: #079a45;
-
-    padding: 13px 22px;
-
-    border-radius: 6px;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    transition: 0.3s ease;
-}
-
-.cta-btn:hover{
-    transform: translateY(-3px);
+.contact-form{
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
 
     box-shadow:
-        0 8px 20px rgba(0,0,0,0.15);
-}
+    0 15px 40px rgba(0,0,0,.05);
 
-.cta-btn i{
-    transition: 0.3s ease;
-}
-
-.cta-btn:hover i{
-    transform: translateX(4px);
+    width: 100%;
 }
 
 /* ===================================
-   CTA IMAGE
+   INPUTS
 =================================== */
 
-.cta-image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.input-group{
+    margin-bottom: 1rem;
 }
 
-.cta-image img{
+.input-group input,
+.input-group textarea{
     width: 100%;
-    max-width: 420px;
 
-    filter: drop-shadow(
-        0 20px 25px rgba(0,0,0,0.20)
-    );
+    padding: 1rem;
 
-    transition: 0.4s ease;
+    border: 1px solid #dde5df;
+    border-radius: 12px;
+
+    outline: none;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: .95rem;
+
+    transition: .3s ease;
 }
 
-.cta-image:hover img{
-    transform:
-        translateY(-8px)
-        scale(1.03);
+.input-group input:focus,
+.input-group textarea:focus{
+    border-color: var(--green);
+}
+
+.input-group textarea{
+    resize: vertical;
+    min-height: 140px;
 }
 
 /* ===================================
-   RESPONSIVE
+   BUTTON
+=================================== */
+
+.submit-btn{
+    width: 100%;
+
+    border: none;
+
+    background: var(--green);
+    color: #fff;
+
+    padding: 1rem;
+
+    border-radius: 12px;
+
+    font-size: .95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.submit-btn:hover{
+    background: var(--dark-green);
+    transform: translateY(-3px);
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 992px){
+
+    .contact-form-section{
+        padding: 90px 6%;
+    }
+
+    .contact-grid{
+        gap: 3rem;
+    }
+
+    .contact-form{
+        padding: 2rem;
+    }
+}
+
+/* ===================================
+   MOBILE
 =================================== */
 
 @media (max-width: 768px){
 
-    .cta-grid{
+    .contact-form-section{
+        padding: 80px 5%;
+    }
+
+    .contact-grid{
         grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-content{
+        max-width: 100%;
         text-align: center;
-        gap: 40px;
     }
 
-    .cta-content h2{
-        font-size: 34px;
-        margin-left: auto;
-        margin-right: auto;
+    .contact-content h2{
+        font-size: 2rem;
     }
 
-    .cta-content p{
-        margin-left: auto;
-        margin-right: auto;
+    .contact-content p{
+        font-size: .95rem;
     }
 
-    .cta-image{
-        order: -1;
+    .contact-feature{
+        justify-content: center;
     }
 
-    .cta-image img{
-        max-width: 280px;
+    .contact-form{
+        padding: 1.5rem;
     }
 }
 
+/* ===================================
+   SMALL PHONES
+=================================== */
+
 @media (max-width: 480px){
 
-    .cta-content h2{
-        font-size: 28px;
+    .contact-form-section{
+        padding: 70px 5%;
     }
 
-    .cta-content p{
-        font-size: 14px;
+    .contact-content h2{
+        font-size: 1.75rem;
+    }
+
+    .contact-content p{
+        font-size: .9rem;
+        line-height: 1.7;
+    }
+
+    .contact-feature span{
+        font-size: .9rem;
+    }
+
+    .contact-form{
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+
+    .input-group input,
+    .input-group textarea{
+        padding: .9rem;
+        font-size: .9rem;
+    }
+
+    .submit-btn{
+        font-size: .9rem;
+        padding: .9rem;
     }
 }
 
