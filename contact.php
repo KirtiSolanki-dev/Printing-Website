@@ -1,3 +1,21 @@
+<?php
+
+$formSubmitted = false;
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+
+    $formSubmitted = true;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,10 +59,10 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.php" class="active">Contact</a></li>
             </ul>
 
-            <a href="#" class="quote-btn">
+            <a href="contact.php" class="quote-btn">
                 Get a Quote
             </a>
 
@@ -204,11 +222,20 @@
 
             <div class="contact-form reveal">
 
-                <form id="contactForm">
+            <?php if($formSubmitted): ?>
+
+                 <div class="success-message">
+               Thank you! Your message has been received successfully.
+          </div>
+
+               <?php else: ?>
+
+                <form id="contactForm" action="contact.php" method="POST">
 
                     <div class="input-group">
                         <input
                             id="name"
+                            name="name"
                             type="text"
                             placeholder="Your Name"
                             required
@@ -218,6 +245,7 @@
                     <div class="input-group">
                         <input
                             id="email"
+                            name="email"
                             type="email"
                             placeholder="Email Address"
                             required
@@ -227,6 +255,7 @@
                     <div class="input-group">
                         <input
                             id="phone"
+                            name="phone"
                             type="tel"
                             placeholder="Phone Number"
                             required
@@ -236,6 +265,7 @@
                     <div class="input-group">
                         <input
                             id="subject"
+                            name="subject"
                             type="text"
                             placeholder="Subject"
                         >
@@ -244,6 +274,7 @@
                     <div class="input-group">
                         <textarea
                             id="message"
+                            name="message"
                             rows="6"
                             placeholder="Your Message"
                             required
@@ -258,6 +289,8 @@
                     <p id="form-message"></p>
 
                 </form>
+
+                <?php endif; ?>
 
             </div>
 
@@ -379,7 +412,7 @@
                             <li><a href="about.html">About</a></li>
                             <li><a href="services.html">Services</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
 
                     </div>
