@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $name = $_POST["name"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
-    $subject = $_POST["subject"];
+    $service = $_POST["servicec"];
     $message = $_POST["message"];
 
     $formSubmitted = true;
@@ -264,10 +264,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
                     <div class="input-group">
                         <input
-                            id="subject"
-                            name="subject"
+                            id="service"
+                            name="service"
                             type="text"
-                            placeholder="Subject"
+                            placeholder="Service"
                         >
                     </div>
 
