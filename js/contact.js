@@ -1,21 +1,67 @@
+console.log("CONTACT JS LOADED");
 
-// const form = document.getElementById("contactForm");
+document.addEventListener("DOMContentLoaded", () => {
 
-// form.addEventListener("submit", (e) => {
+    const form = document.getElementById("contactForm");
 
-//     e.preventDefault();
+    if (!form) {
+        console.log("Form not found");
+        return;
+    }
 
-//     const name = document.getElementById("name").value.trim();
-//     const email = document.getElementById("email").value.trim();
-//     const phone = document.getElementById("phone").value.trim();
-//     const message = document.getElementById("message").value.trim();
+    form.addEventListener("submit", async function (e) {
 
-//     if (!name || !email || !phone || !message) {
-//         alert("Please fill all required fields.");
-//         return;
-//     }
+        e.preventDefault();
 
-//     alert("Message sent successfully!");
+        // Client-side validation
+        const phone = document.getElementById("phone").value.trim();
+        const email = document.getElementById("email").value.trim();
 
-//     form.reset();
-// });
+        if (!/^[6-9]\d{9}$/.test(phone)) {
+            alert("Please enter a valid 10-digit mobile number.");
+            return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        const formData = new FormData(form);
+
+        try {
+
+            const response = await fetch("contact.php", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.text();
+
+            if (result.trim() === "success") {
+
+                form.innerHTML = `
+                    <div class="success-message">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h3>Message Sent Successfully</h3>
+                        <p>Thank you! Your enquiry has been submitted successfully.</p>
+                    </div>
+                `;
+
+            } else {
+
+                console.log(result);
+                alert("Something went wrong.");
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+            alert("Server Error");
+
+        }
+
+    });
+
+});

@@ -1,20 +1,59 @@
 <?php
 
-$formSubmitted = false;
-
-if($_SERVER["REQUEST_METHOD"] == "POST")
+if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
-    $service = $_POST["servicec"];
+    $service = $_POST["service"];
     $message = $_POST["message"];
 
-    $formSubmitted = true;
+       // Name Validation
+    if (!preg_match('/^[A-Za-z ]{3,50}$/', $name))
+    {
+        die("Invalid Name");
+    }
+
+    // Email Validation
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+    {
+        die("Invalid Email Address");
+    }
+
+    // Phone Validation
+    if (!preg_match('/^[6-9][0-9]{9}$/', $phone))
+    {
+        die("Invalid Phone Number");
+    }
+
+    $conn = mysqli_connect("localhost", "root", "", "indupr");
+
+    if (!$conn)
+    {
+        die("Connection Failed: " . mysqli_connect_error());
+    }
+
+    $sql = "INSERT INTO contact_messages
+    (name, email, phone, service, message)
+    VALUES
+    ('$name', '$email', '$phone', '$service', '$message')";
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($result)
+  {
+    echo "success";
+    exit();
+  }
+    else
+    {
+        echo "Error: " . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -222,13 +261,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
             <div class="contact-form reveal">
 
-            <?php if($formSubmitted): ?>
-
-                 <div class="success-message">
-               Thank you! Your message has been received successfully.
-          </div>
-
-               <?php else: ?>
+          
 
                 <form id="contactForm" action="contact.php" method="POST">
 
@@ -237,6 +270,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                             id="name"
                             name="name"
                             type="text"
+                            pattern="[A-Za-z ]{3,50}"
+                            title="Name should contain only letters and spaces (3-50 characters)"
                             placeholder="Your Name"
                             required
                         >
@@ -257,6 +292,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                             id="phone"
                             name="phone"
                             type="tel"
+                            pattern="[6-9][0-9]{9}"
+                            title="Enter a valid 10-digit Indian mobile number"
                             placeholder="Phone Number"
                             required
                         >
@@ -290,7 +327,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
                 </form>
 
-                <?php endif; ?>
+                
 
             </div>
 
@@ -474,7 +511,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
         </footer>
     </div>
-
+    <script>
+console.log("INLINE SCRIPT WORKING");
+</script>
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
 
