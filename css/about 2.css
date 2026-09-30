@@ -26,6 +26,7 @@ body {
     padding: 0;
     width: 100%;
     overflow-x: clip;
+     background: #000;
 
 }
 
@@ -448,7 +449,7 @@ section {
         0 8px 25px rgba(0, 0, 0, 0.25),
         inset 0 -1px 0 rgba(255, 255, 255, 0.05);
 
-    animation: fadeUp 1s ease-out;
+    /* animation: fadeUp 1s ease-out; */
 }
 
 /* ===================================
@@ -749,7 +750,7 @@ section {
 
     overflow: hidden;
 
-    animation: fadeUp 1s ease-out;
+    /* animation: fadeUp 1s ease-out; */
     background: #0f172a;
 }
 
@@ -2996,3 +2997,11 @@ section {
         font-size: 0.95rem;
     }
 }
+
+/* .reveal,
+.reveal-left,
+.reveal-right {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+} */

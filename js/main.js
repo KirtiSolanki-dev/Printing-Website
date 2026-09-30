@@ -1,5 +1,7 @@
 console.log("JS Loaded");
 
+console.log("MAIN JS UPDATED");
+
 // ===================================
 // HAMBURGER MENU
 // ===================================
@@ -53,11 +55,37 @@ window.addEventListener("scroll", () => {
 
 });
 
+// const reveals = document.querySelectorAll(
+//     ".reveal, .reveal-left, .reveal-right"
+// );
+
+// function revealElements() {
+
+//     reveals.forEach((element) => {
+
+//         const windowHeight = window.innerHeight;
+//         const revealTop = element.getBoundingClientRect().top;
+
+//         if (revealTop < windowHeight - 100) {
+
+//             element.classList.add("show");
+
+//         }
+
+//     });
+
+// }
+
+// window.addEventListener("scroll", revealElements);
+
+// // Run once when page loads
+// revealElements();
+
 /* ===================================
    INDUPR PRELOADER
 =================================== */
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
     const preloader = document.getElementById("preloader");
 
@@ -115,3 +143,4 @@ window.addEventListener("load", () => {
     }, 2500);
 
 });
+

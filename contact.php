@@ -26,12 +26,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         die("Invalid Phone Number");
     }
 
-    $conn = mysqli_connect("localhost", "root", "", "indupr");
+    // $conn = mysqli_connect("localhost", "root", "", "indupr");
 
-    if (!$conn)
-    {
-        die("Connection Failed: " . mysqli_connect_error());
-    }
+    // if (!$conn)
+    // {
+    //     die("Connection Failed: " . mysqli_connect_error());
+    // }
+
+    $conn = mysqli_connect(
+    "sql205.thsite.top",
+    "thsi_43030887",
+    "c5!xTDne",
+    "thsi_43030887_Indupr_db"
+   );
+
+   if (!$conn) {
+      die("Connection Failed: " . mysqli_connect_error());
+  }
 
     $sql = "INSERT INTO contact_messages
     (name, email, phone, service, message)

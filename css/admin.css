@@ -287,3 +287,11 @@ tbody tr:hover{
 .logo img:hover {
     transform: scale(1.03);
 }
+
+/* .reveal,
+.reveal-left,
+.reveal-right {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+} */
