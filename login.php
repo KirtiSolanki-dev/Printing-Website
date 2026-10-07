@@ -55,10 +55,9 @@ body{
     background:
     linear-gradient(
         135deg,
-        #00b7ff,
-        #ff00aa,
-        #ffd000,
-        #111827
+        #071c2f 0%,
+        #111827 40%,
+        #1f2937 100%
     );
 }
 
@@ -117,7 +116,11 @@ button{
 
     font-weight:600;
 
-    background:#111827;
+    background:linear-gradient(
+        135deg,
+        #00cfff,
+        #ff00aa
+    );
 
     color:white;
 }
